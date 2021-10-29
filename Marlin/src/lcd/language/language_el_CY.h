@@ -21,6 +21,26 @@
  */
 #pragma once
 
+<<<<<<< HEAD:Marlin/src/lcd/extui/mks_ui/mks_hardware.h
+#include "../../../inc/MarlinConfigPre.h"
+
+#include <lvgl.h>
+
+// Functions for MKS_TEST
+#if BOTH(MKS_TEST, SDSUPPORT)
+  void mks_hardware_test();
+  void mks_test_get();
+  void mks_gpio_test();
+  extern uint8_t mks_test_flag;
+#else
+  #define mks_test_flag 0
+#endif
+
+// String display and assets
+void disp_string(uint16_t x, uint16_t y, const char * string, uint16_t charColor, uint16_t bkColor);
+void disp_assets_update();
+void disp_assets_update_progress(const char *msg);
+=======
 /**
  * Greek (Cyprus)
  *
@@ -36,3 +56,4 @@ namespace Language_el_CY {
   constexpr uint8_t CHARSIZE              = 2;
   LSTR LANGUAGE                           = _UxGT("Greek (Cyprus)");
 }
+>>>>>>> origin/bugfix-2.0.x:Marlin/src/lcd/language/language_el_CY.h
